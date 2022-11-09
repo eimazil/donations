@@ -30,8 +30,7 @@ function Nav({ status }) {
                   status === 3 ||
                   status === 4 ? (
                     <NavLink
-                      // First link!!!!!!!!!!!!!!!!!!!
-                      to="/createFundraise"
+                      to="/secondLink"
                       className={({ isActive }) =>
                         isActive ? "nav-link active" : "nav-link"
                       }
@@ -41,7 +40,7 @@ function Nav({ status }) {
                   ) : null}
                   {status === 3 ? (
                     <NavLink
-                      to="/AdminIdeas"
+                      to="/thirdLink"
                       className={({ isActive }) =>
                         isActive ? "nav-link active" : "nav-link"
                       }

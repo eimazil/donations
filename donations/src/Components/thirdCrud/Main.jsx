@@ -1,4 +1,4 @@
-import AdminIdeas from "../../Contexts/AdminIdeas";
+import ThirdContext from "../../Contexts/ThirdContext";
 import List from "./List";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -59,7 +59,7 @@ function Main() {
   }, [deleteData]);
 
   return (
-    <AdminIdeas.Provider
+    <ThirdContext.Provider
       value={{
         ideas,
         setEditData,
@@ -73,7 +73,7 @@ function Main() {
           </div>
         </div>
       </div>
-    </AdminIdeas.Provider>
+    </ThirdContext.Provider>
   );
 }
 

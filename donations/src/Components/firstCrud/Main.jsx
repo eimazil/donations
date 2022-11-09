@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import List from "./List";
-import Home from "../../Contexts/Home";
+import FirstContext from "../../Contexts/FirstContext";
 import { authConfig } from "../../Functions/auth";
 
 function Main() {
@@ -60,7 +60,7 @@ function Main() {
   }, [createDonation]);
 
   return (
-    <Home.Provider
+    <FirstContext.Provider
       value={{
         ideas,
         setCreateDonation,
@@ -73,7 +73,7 @@ function Main() {
           </div>
         </div>
       </div>
-    </Home.Provider>
+    </FirstContext.Provider>
   );
 }
 export default Main;

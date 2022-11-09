@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import AdminIdeas from "../../Contexts/AdminIdeas";
+import ThirdContext from "../../Contexts/ThirdContext";
 
 function Line({ idea }) {
-  const { setEditData, setDeleteData } = useContext(AdminIdeas);
+  const { setEditData, setDeleteData } = useContext(ThirdContext);
 
   return (
     <li className="list-group-item">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useContext } from "react";
-import AdminIdeas from "../../Contexts/AdminIdeas";
+import ThirdContext from "../../Contexts/ThirdContext";
 import Line from "./Line";
 
 // const sortData = [
@@ -12,7 +12,7 @@ import Line from "./Line";
 // ];
 
 function List() {
-  const { ideas } = useContext(AdminIdeas);
+  const { ideas } = useContext(ThirdContext);
 
   const [stateFilter, setStateFilter] = useState(0);
 

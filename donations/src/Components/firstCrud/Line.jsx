@@ -1,12 +1,12 @@
 import { useState, useContext } from "react";
-import Home from "../../Contexts/Home";
+import FirstContext from "../../Contexts/FirstContext";
 import DataContext from "../../Contexts/DataContext";
 
 function Line({ idea }) {
   const [name, setName] = useState("");
   const [donation, setDonation] = useState("");
 
-  const { setCreateDonation } = useContext(Home);
+  const { setCreateDonation } = useContext(FirstContext);
   const { makeMsg } = useContext(DataContext);
 
   const add = () => {
@@ -22,7 +22,7 @@ function Line({ idea }) {
       makeMsg("Add donation amount", "error");
       return;
     }
-    if (donation > idea[1][0].goal - idea[1][0].current_balance) {
+    if (donation > idea[1][0].left_to_reach) {
       makeMsg(
         "Donation amount exceeds remaining goal, please add lower sum",
         "error"

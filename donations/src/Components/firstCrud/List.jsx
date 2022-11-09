@@ -1,16 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import Home from "../../Contexts/Home";
+import { useContext } from "react";
+import FirstContext from "../../Contexts/FirstContext";
 import Line from "./Line";
 
 function List() {
-  const { ideas } = useContext(Home);
-
-  // useEffect(() => {
-  //   if (movies === null) {
-  //     return;
-  //   }
-  //   setStats((s) => ({ ...s, movieCount: movies.length }));
-  // }, [movies]);
+  const { ideas } = useContext(FirstContext);
 
   return (
     <div className="card m-4">

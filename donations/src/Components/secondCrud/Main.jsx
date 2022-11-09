@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Ideas from "../../Contexts/Ideas";
+import SecondContext from "../../Contexts/SecondContext";
 import Create from "./Create";
 import axios from "axios";
 import { authConfig } from "../../Functions/auth";
@@ -19,7 +19,7 @@ function Main() {
   }, [createData]);
 
   return (
-    <Ideas.Provider
+    <SecondContext.Provider
       value={{
         setCreateData,
       }}
@@ -29,7 +29,7 @@ function Main() {
           <div className=" col-lg-4">{<Create />}</div>
         </div>
       </div>
-    </Ideas.Provider>
+    </SecondContext.Provider>
   );
 }
 export default Main;

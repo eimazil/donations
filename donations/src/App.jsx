@@ -15,9 +15,9 @@ import { v4 as uuidv4 } from "uuid";
 import Messages from "./Components/Messages";
 
 // Main screen imports
-import Home from "./Components/home/Main";
-import AdminIdeas from "./Components/adminIdeas/Main";
-import MainIdeas from "./Components/admin/Main";
+import FirstCrud from "./Components/firstCrud/Main";
+import SecondCrud from "./Components/secondCrud/Main";
+import ThirdCrud from "./Components/thirdCrud/Main";
 
 function App() {
   const [roleChange, setRoleChange] = useState(Date.now());
@@ -47,7 +47,12 @@ function App() {
         <ShowNav roleChange={roleChange} />
         <Messages />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<FirstCrud />}></Route>
+          <Route path="/secondLink" element={<SecondCrud />}></Route>
+          <Route
+            path="/thirdLink"
+            element={<RequireAuth role="admin">{<ThirdCrud />}</RequireAuth>}
+          ></Route>
           <Route
             path="/login"
             element={<LoginPage setRoleChange={setRoleChange} />}
@@ -56,11 +61,6 @@ function App() {
             path="/logout"
             element={<LogoutPage setRoleChange={setRoleChange} />}
           />
-          <Route path="/createFundraise" element={<MainIdeas />}></Route>
-          <Route
-            path="/adminIdeas"
-            element={<RequireAuth role="admin">{<AdminIdeas />}</RequireAuth>}
-          ></Route>
         </Routes>
       </BrowserRouter>
     </DataContext.Provider>
