@@ -13,6 +13,7 @@ import axios from "axios";
 import DataContext from "./Contexts/DataContext";
 import { v4 as uuidv4 } from "uuid";
 import Messages from "./Components/Messages";
+import "bootstrap/dist/js/bootstrap.bundle";
 
 // Main screen imports
 import FirstCrud from "./Components/firstCrud/Main";
