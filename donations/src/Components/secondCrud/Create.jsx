@@ -71,7 +71,7 @@ function Create() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="mb-3 flex-column gap-10px">
+        <div className="mb-3 d-flex flex-column gap-10px">
           <label className="form-label">Add description</label>
           <textarea
             value={description}

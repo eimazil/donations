@@ -41,14 +41,11 @@ function Line({ idea }) {
   return (
     <li
       style={{
-        border:
-          idea[1][0].goal - idea[1][0].current_balance <= 0
-            ? "2px solid green"
-            : "none",
+        border: idea[1][0].left_to_reach <= 0 ? "2px solid green" : "none",
       }}
       className="list-group-item"
     >
-      <div className="line__content align-center gap-50px">
+      <div className="line__content align-center gap-50">
         <div>
           <h4 className="idea-title">{idea[1][0].title}</h4>
           {idea[1][0].image ? (
@@ -63,7 +60,7 @@ function Line({ idea }) {
             <span className="no-image">No Image</span>
           )}
         </div>
-        <div className="flex-column">
+        <div className="d-flex flex-column">
           <p>{idea[1][0].description}</p>
           <span>Fundraiser goal: {idea[1][0].goal} Eur</span>
           <span>Currently raised: {idea[1][0].current_balance} Eur</span>
@@ -74,7 +71,7 @@ function Line({ idea }) {
         <ul className="list-group">
           <h5>Donations</h5>
           {idea[1]?.map((i) => (
-            <li key={i.did} className="list-group-item flex-row gap-5px">
+            <li key={i.did} className="list-group-item d-flex flex-row gap-5px">
               <div>{i.name}</div>
               <div>
                 {i.donation}
@@ -86,41 +83,43 @@ function Line({ idea }) {
 
         <div
           style={{
-            display:
-              idea[1][0].goal - idea[1][0].current_balance <= 0
-                ? "none"
-                : "block",
+            display: idea[1][0].left_to_reach <= 0 ? "none" : "block",
           }}
-          className="mb-3 flex-column"
         >
-          <div className="flex-column margin-bottom-10px">
-            <h5>Donate</h5>
-            <label className="form-label">Name</label>
-            <input
-              className="form-control"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            ></input>
-            <label className="form-label">Amount to donate</label>
-            <input
-              value={donation}
-              onChange={(e) => setDonation(Number(e.target.value))}
-              type="number"
-            />
+          <div className="mb-3 d-flex flex-column">
+            <div className="d-flex flex-column margin-bottom-10px">
+              <h5>Donate</h5>
+              <div className="d-flex flex-column flex-lg-row gap-5px">
+                <div className="d-flex flex-column">
+                  <label className="form-label">Name</label>
+                  <input
+                    className="form-control"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  ></input>
+                </div>
+                <div className="d-flex flex-column">
+                  <label className="form-label">Amount to donate</label>
+                  <input
+                    className="form-control"
+                    value={donation}
+                    onChange={(e) => setDonation(Number(e.target.value))}
+                    type="number"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              style={{
+                display: idea[1][0].left_to_reach <= 0 ? "none" : "block",
+              }}
+              onClick={add}
+              type="button"
+              className="btn btn-outline-success"
+            >
+              Donate
+            </button>
           </div>
-          <button
-            style={{
-              display:
-                idea[1][0].goal - idea[1][0].current_balance <= 0
-                  ? "none"
-                  : "block",
-            }}
-            onClick={add}
-            type="button"
-            className="btn btn-outline-success"
-          >
-            Donate
-          </button>
         </div>
       </div>
     </li>

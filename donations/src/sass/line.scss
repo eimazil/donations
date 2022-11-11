@@ -104,21 +104,12 @@
 
 // Admin approve ideas
 
-.text-container {
-  display: flex;
-  justify-content: space-between;
-  width: calc(100% - 330px);
-}
-
 @media (max-width: 768px) {
-  .line__content {
+  .media-column {
     flex-direction: column;
   }
-  .text-container {
-    width: 100%;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
+  .media-row {
+    flex-direction: row;
   }
 }
 
