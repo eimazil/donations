@@ -7,7 +7,7 @@ function Line({ idea }) {
   return (
     <li className="list-group-item">
       <div className="line__content">
-        <div className="col-12 col-lg-3 margin-right-30px">
+        <div className="col-12 col-lg-3 margin-right-30">
           <h5>{idea.title}</h5>
           {idea.image ? (
             <img
@@ -24,7 +24,7 @@ function Line({ idea }) {
             <div>{idea.description}</div>
             <div>Campaign goal: {idea.goal}</div>
           </div>
-          <div className="d-flex flex-row flex-lg-column gap-5px ">
+          <div className="d-flex flex-row flex-lg-column gap-2 ">
             <button
               style={{ display: idea.state === 1 ? "none" : "block" }}
               onClick={() => setEditData({ state: 1, id: idea.id })}

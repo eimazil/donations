@@ -25,7 +25,7 @@ function Main() {
       }}
     >
       <div className="container">
-        <div className="row justify-center">
+        <div className="row d-flex justify-content-center">
           <div className=" col-lg-4">{<Create />}</div>
         </div>
       </div>
