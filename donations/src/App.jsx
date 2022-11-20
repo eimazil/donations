@@ -1,4 +1,5 @@
 import "./App.scss";
+import "bootstrap/dist/js/bootstrap.bundle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ShowNav from "./Functions/showNav";
 import RequireAuth from "./Functions/requireAuth";
